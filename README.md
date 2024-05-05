@@ -37,7 +37,7 @@ curl http://localhost:3000/tasks
 ```
 
 ### Get task by id
-Privide the `id` with appropriate value
+Privide the `<id>` with valid id value
 ```
 curl http://localhost:3000/tasks/<id>
 ```
@@ -48,13 +48,13 @@ curl http://localhost:3000/tasks -H 'Content-Type: application/json' -d '{ "titl
 ```
 
 ### Update task
-Privide the `id` with appropriate value
+Privide the `<id>` with valid id value
 ```
 curl -X PUT http://localhost:3000/tasks/<id> -H 'Content-Type: application/json' -d '{ "title": "Go home", "description": "Check roof", "status": "IN_PROGRESS" }'
 ```
 
 ### Delete task
-Privide the `id` with appropriate value
+Privide the `<id>` with valid id value
 ```
 curl -X DELETE http://localhost:3000/tasks/<id>
 ```
