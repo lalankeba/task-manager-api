@@ -50,7 +50,7 @@ curl http://localhost:3000/tasks -H 'Content-Type: application/json' -d '{ "titl
 ### Update task
 Privide the `id` with appropriate value
 ```
-curl -X PUT http://localhost:3000/tasks/<id> -H 'Content-Type: application/json' -d '{ "title": "Go home", "description": "Check roof", "status": "IN Prrgress" }'
+curl -X PUT http://localhost:3000/tasks/<id> -H 'Content-Type: application/json' -d '{ "title": "Go home", "description": "Check roof", "status": "IN_PROGRESS" }'
 ```
 
 ### Delete task
