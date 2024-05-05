@@ -18,3 +18,43 @@ PORT=3000
 - `POST /tasks`: Create a new task.
 - `PUT /tasks/:id`: Update a task by ID.
 - `DELETE /tasks/:id`: Delete a task by ID.
+
+## Task Object
+```
+{ 
+    "title": "Complete Project Proposal", 
+    "description": "Prepare and submit the project proposal", 
+    "status": "IN_PROGRESS" 
+}
+```
+Valid status values are `PENDING`, `IN_PROGRESS` and `DONE`.
+
+## Sample Requests
+
+### Get all tasks
+```
+curl http://localhost:3000/tasks
+```
+
+### Get task by id
+Privide the `id` with appropriate value
+```
+curl http://localhost:3000/tasks/<id>
+```
+
+### Create task
+```
+curl http://localhost:3000/tasks -H 'Content-Type: application/json' -d '{ "title": "Complete Project Proposal", "description": "Prepare and submit the project proposal.", "status": "IN_PROGRESS" }'
+```
+
+### Update task
+Privide the `id` with appropriate value
+```
+curl -X PUT http://localhost:3000/tasks/<id> -H 'Content-Type: application/json' -d '{ "title": "Go home", "description": "Check roof", "status": "IN Prrgress" }'
+```
+
+### Delete task
+Privide the `id` with appropriate value
+```
+curl -X DELETE http://localhost:3000/tasks/<id>
+```
