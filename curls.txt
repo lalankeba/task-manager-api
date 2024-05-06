@@ -1,0 +1,57 @@
+curl http://localhost:3000/tasks/
+
+
+
+create
+------
+curl http://localhost:3000/tasks/ -H 'Content-Type: application/json' -d '{ "title": "Complete Project Proposal", "description": "Prepare and submit the project proposal.", "status": "IN_PROGRESS" }' | jq .
+
+curl http://localhost:3000/tasks/ -H 'Content-Type: application/json' -d '{ "title": "Do the weekly assignment", "description": "Check db connections", "status": "PENDING" }' | jq .
+
+# Output
+{
+  "title": "Complete Project Proposal",
+  "description": "Prepare and submit the project proposal.",
+  "status": "IN_PROGRESS",
+  "_id": "663605200df074461a24efce",
+  "created_at": "2024-05-04T09:51:28.559Z",
+  "updated_at": "2024-05-04T09:51:28.559Z",
+  "__v": 0
+}
+
+
+
+
+
+
+
+get all
+-------
+curl http://localhost:3000/tasks | jq .
+
+
+
+
+
+
+get single
+----------
+curl http://localhost:3000/tasks/6635e3af4de062dc613fb676 | jq .
+
+
+
+
+
+
+Update
+------
+curl -X PUT http://localhost:3000/tasks/6635e3af4de062dc613fb676 -H 'Content-Type: application/json' -d '{ "title": "Go home", "description": "Check roof", "status": "IN_PROGRESS" }' | jq .
+
+
+
+
+
+Delete
+------
+curl -X DELETE http://localhost:3000/tasks/66366fd608b6a6a90026ff7b | jq .
+
